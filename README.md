@@ -1,5 +1,20 @@
 # The-Distributed-Sudoku-project
 
+authors:
+
+- **Mohammad SHREM | mohammad.shrem@edu.univ-fcomte.fr**
+- **Mariam AL KHALAF | mariam.al_khalaf@edu.univ-fcomte.fr**
+- **Idrissa MASSALY | idrissa.massaly@edu.univ-fcomte.fr**
+
+
+supervisor:
+
+- **Prof. Benoit PIRANDA | benoit.piranda@univ-fcomte.fr**
+- **Prof. Dominique DHOUTAUT | dominique.dhoutaut@univ-fcomte.fr**
+
+project relaized in VisibleSim
+
+
 ## Overview
 This program implements a distributed block coordination system using message propagation and validation to determine and synchronize colors across connected blocks. It handles various message types to validate, propagate, and confirm color assignments, ensuring the integrity of the distributed network. The program is designed for embedded systems with message-based communication between blocks.
 
