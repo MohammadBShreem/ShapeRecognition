@@ -1,7 +1,5 @@
 # The-Distributed-Sudoku-project
 
-# Shape-Recognition-Distributed-Algorithm
-
 authors:
   * [Mohammad SHREM](https://www.linkedin.com/in/mohammadbshreem/) <mohammad.shrem@edu.univ-fcomte.fr>
   * [Mariam AL KHALAF]() <mariam.al_khalaf@edu.univ-fcomte.fr>
