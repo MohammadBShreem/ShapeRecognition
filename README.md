@@ -1,19 +1,19 @@
 # The-Distributed-Sudoku-project
 
+# Shape-Recognition-Distributed-Algorithm
+
 authors:
-
-- **Mohammad SHREM | mohammad.shrem@edu.univ-fcomte.fr**
-- **Mariam AL KHALAF | mariam.al_khalaf@edu.univ-fcomte.fr**
-- **Idrissa MASSALY | idrissa.massaly@edu.univ-fcomte.fr**
-
+  * [Mohammad SHREM](https://www.linkedin.com/in/mohammadbshreem/) <mohammad.shrem@edu.univ-fcomte.fr>
+  * [Mariam AL KHALAF]() <mariam.al_khalaf@edu.univ-fcomte.fr>
+  * [Idrissa MASSALY]() <idrissa.massaly@edu.univ-fcomte.fr>
 
 supervisor:
+  * [Prof. Benoit PIRANDA](https://www.femto-st.fr/fr/personnel-femto/bpiranda) <benoit.piranda@univ-fcomte.fr>
+  * [Prof. Dominique DHOUTAUT](https://www.femto-st.fr/fr/personnel-femto/ddhoutau) <dominique.dhoutaut@univ-fcomte.fr>
 
-- **Prof. Benoit PIRANDA | benoit.piranda@univ-fcomte.fr**
-- **Prof. Dominique DHOUTAUT | dominique.dhoutaut@univ-fcomte.fr**
+project relaized in [VisibleSim](https://github.com/VisibleSim/VisibleSim)
 
-project relaized in VisibleSim
-
+---
 
 ## Overview
 This program implements a distributed block coordination system using message propagation and validation to determine and synchronize colors across connected blocks. It handles various message types to validate, propagate, and confirm color assignments, ensuring the integrity of the distributed network. The program is designed for embedded systems with message-based communication between blocks.
@@ -44,8 +44,14 @@ When a block receives a `SETCOOR_MSG`, it updates its coordinates based on the s
 
 The updated coordinates are propagated to other connected neighbors via the `propagateSetCoor` function, ensuring all blocks have valid and unique coordinates.
 
+---
+
 ## Color Validation Process
 When the program receives a new color, it validates the color assignment through three distinct checks: **Vertical**, **Horizontal**, and **Dial**. Each validation is performed by propagating specific messages and awaiting acknowledgment from neighboring blocks.
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/c401bff5-5d48-44c6-b33d-dc236c24e4fd"></br>
+</div>
 
 ### Vertical Validation
 **Objective:** Ensure the new color does not conflict with vertically aligned neighbors.
@@ -56,6 +62,11 @@ When the program receives a new color, it validates the color assignment through
     - If not, they forward the message to their vertically connected neighbor or acknowledge success if no further neighbors exist.
 3. Upon receiving all acknowledgments, the initiating block determines whether the vertical validation is successful.
 
+<div align="center">
+<img src="https://github.com/user-attachments/assets/bb5fd80a-2ab8-4780-8e6d-4dec877372fb"></br>
+</div>
+              
+
 ### Horizontal Validation
 **Objective:** Ensure the new color does not conflict with horizontally aligned neighbors.
 
@@ -65,6 +76,10 @@ When the program receives a new color, it validates the color assignment through
     - If not, they forward the message to their horizontally connected neighbor or acknowledge success if no further neighbors exist.
 3. Upon receiving all acknowledgments, the initiating block determines whether the horizontal validation is successful.
 
+<div align="center">
+<img src="https://github.com/user-attachments/assets/57d70b67-8f37-4dce-b99f-7d0c6ec14cf5"></br>
+</div>
+
 ### Dial Validation
 **Objective:** Confirm the proposed color is suitable for all blocks in the local cluster.
 
@@ -73,6 +88,12 @@ When the program receives a new color, it validates the color assignment through
     - Propagate the `DIAL_MSG` to their neighbors with an incremented count (up to `2`).
     - Check if the proposed color matches their current color. If so, they acknowledge failure; otherwise, they acknowledge success.
 3. After receiving acknowledgments, the initiating block updates its color if all responses indicate success.
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/7a64bc9d-e3b2-4d8e-84b5-e4b356966db4"></br>
+</div>
+
+---
 
 ### Acknowledgment Handling
 Acknowledgments (`ACK_MSG`) are used to:
@@ -96,52 +117,15 @@ When receiving an update message from a neighbor, this function adjusts the bloc
 - **`UPDATE_MSG`**: Updates neighbors with the newly assigned color.
 - **`ACK_MSG`**: Acknowledges the success or failure of a validation process.
 
+---
+
 ## System Flow Diagram
-```plaintext
-[Initialization]
-     |
-     v
-[Determine Coordinator]
-     |
-     v
-[Start Coordinate Propagation]
-     |
-     v
-[Receive New Color]
-     |
-     v
-[Perform Vertical, Horizontal, Dial Validations]
-     |
-     v
-[Update Color Status]
-     |
-     v
-[Broadcast Updated Color to Neighbors]
-     |
-     v
-[Loop Back to Check for Further Colors]
-```
 
-## Dependencies
-- **Embedded Libraries:**
-    - `BB.h`
-    - `hwLED.h`
-    - `bb_global.h`
-    - `serial.h`
-    - `layer3_generic.h`
-    - `light.h`
-- **Standard Libraries:**
-    - `stdio.h`
-    - `stdint.h`
-    - `math.h`
+<div align="center">
+<img src="https://github.com/user-attachments/assets/72a59411-16a2-4fa9-b700-e161bd987fc4"></br>
+</div>
 
-## Compilation and Execution
-1. Compile the program with the necessary embedded system toolchain.
-2. Flash the compiled binary to the target hardware.
-3. Observe the block coordination and color synchronization through logs or hardware indicators.
+---
 
-## Future Enhancements
-- Implement additional validation checks for diagonal neighbors.
-- Optimize acknowledgment handling to reduce message overhead.
-- Extend the system to support dynamic block addition and removal.
+## Result
 
