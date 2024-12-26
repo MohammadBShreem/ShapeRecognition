@@ -49,6 +49,7 @@ When the program receives a new color, it validates the color assignment through
 
 <div align="center">
 <img src="https://github.com/user-attachments/assets/c401bff5-5d48-44c6-b33d-dc236c24e4fd"></br>
+<i>Figure 1: color validation process</i>
 </div>
 
 ### Vertical Validation
@@ -62,6 +63,7 @@ When the program receives a new color, it validates the color assignment through
 
 <div align="center">
 <img src="https://github.com/user-attachments/assets/bb5fd80a-2ab8-4780-8e6d-4dec877372fb"></br>
+ <i>Figure 2: Vertical Validation</i>
 </div>
               
 
@@ -76,6 +78,7 @@ When the program receives a new color, it validates the color assignment through
 
 <div align="center">
 <img src="https://github.com/user-attachments/assets/57d70b67-8f37-4dce-b99f-7d0c6ec14cf5"></br>
+ <i>Figure 3: Horizontal Validation</i>
 </div>
 
 ### Dial Validation
@@ -89,6 +92,7 @@ When the program receives a new color, it validates the color assignment through
 
 <div align="center">
 <img src="https://github.com/user-attachments/assets/7a64bc9d-e3b2-4d8e-84b5-e4b356966db4"></br>
+  <i>Figure 4: Dial Validation</i>
 </div>
 
 ---
@@ -121,9 +125,40 @@ When receiving an update message from a neighbor, this function adjusts the bloc
 
 <div align="center">
 <img src="https://github.com/user-attachments/assets/72a59411-16a2-4fa9-b700-e161bd987fc4"></br>
+<i>Figure 5: diagram for Plus Shape</i>
 </div>
 
 ---
 
 ## Result
+
+###
+<div align="center">
+<img src="https://github.com/user-attachments/assets/c8b49f94-b446-4596-b3af-a493aa8bea16"></br>
+<i>Figure 6-a: setCoor Test - Source Direction (BOTTOM: GREEN, NORTH: BLUE)</i>
+</div>
+
+###
+<div align="center">
+<img src="https://github.com/user-attachments/assets/55bd66f0-f90b-4e68-958b-a9381a53537b"></br>
+<i>Figure 6-b: setCoor Test - if(x==y): RED</i>
+</div>
+
+###
+https://github.com/user-attachments/assets/c51cb446-a29a-4c32-9273-f7d4290af9a3
+<div align="center">
+<i>Figure 7: Final Full Solution Video</i>
+</div>
+
+###
+<div align="center">
+<img src="https://github.com/user-attachments/assets/b65a1ad6-fe7a-49af-a5a2-a5cd420d6c4a"></br>
+<i>Figure 8: Final Solution Photo</i>
+</div>
+
+###
+https://github.com/user-attachments/assets/f6ad4d4f-6fe2-4bd6-9501-cc5e8d4b6c15
+<div align="center">
+<i>Figure 9: Color Validation Test Video</i>
+</div>
 
