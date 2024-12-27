@@ -84,11 +84,12 @@ When the program receives a new color, it validates the color assignment through
 ### Dial Validation
 **Objective:** Confirm the proposed color is suitable for all blocks in the local cluster.
 
-1. The block sends a `DIAL_MSG` with a count value of `1` to its neighbors.
-2. Neighboring blocks:
-    - Propagate the `DIAL_MSG` to their neighbors with an incremented count (up to `2`).
-    - Check if the proposed color matches their current color. If so, they acknowledge failure; otherwise, they acknowledge success.
-3. After receiving acknowledgments, the initiating block updates its color if all responses indicate success.
+1. The block sends a `DIAL_MSG` with a count value of `1` to its neighbors (value 1: you are 1 link far from the initiator) 
+2. Neighboring blocks; switch the direction based on x,y value:
+    - if the received port is BOTTOM and my COOR is (0,1), so the next destination is my NORTH port (example), then:
+    - Propagate the `DIAL_MSG` to their neighbor with an incremented count value of `2` (value 2: you are 2 link far from the initiator, you are the DIAL)
+3. once I received a `DIAL_MSG` with count value = 2, you are the DIAL, Check if the proposed color matches their current color. If so, they acknowledge failure; otherwise, they acknowledge success.
+4. After receiving acknowledgments, the initiating block updates its color if all responses indicate success.
 
 <div align="center">
 <img src="https://github.com/user-attachments/assets/7a64bc9d-e3b2-4d8e-84b5-e4b356966db4"></br>
