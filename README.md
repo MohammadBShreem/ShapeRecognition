@@ -1,4 +1,4 @@
-# The-Distributed-Sudoku-project
+# The-Distributed-Sudoku-Project
 
 authors:
   * [Mohammad SHREM](https://www.linkedin.com/in/mohammadbshreem/) <mohammad.shrem@edu.univ-fcomte.fr>
