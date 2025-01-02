@@ -1,4 +1,4 @@
-# Sudoku Solver Implementation Report
+# Sudoku Solver VisibileSim Report
 
 This report provides a detailed explanation of the Sudoku solver algorithm and answers key questions regarding its implementation and efficiency. The solver is based on a distributed block structure, where each block represents a Sudoku cell, and the grid is managed dynamically based on user input and conflict checks.
 
@@ -134,12 +134,7 @@ To detect if all blocks have a valid value at the end of the game, the algorithm
 2. **Global Communication**: Each block sends a "status" message to all other blocks indicating whether its value is valid or invalid.
 3. **Aggregate Status**: The system aggregates the responses from all blocks. If all blocks return "valid," the grid is considered complete and valid. If any block returns "invalid," the grid is not yet solved.
 
-### Efficiency:
-This method is efficient in terms of checking all blocks simultaneously. The maximum number of messages sent will be:
-- Each block sends a status message to every other block.
-- In a 9x9 Sudoku grid (81 blocks), there will be a total of 81 status messages sent.
-
-Since each block only sends a single message and receives a status, the communication load is linear in terms of the number of blocks. This makes the method efficient but still dependent on the grid size.
-
 ### Conclusion:
 The algorithm provides an efficient way to detect if all blocks have valid values, with a maximum of 81 messages sent. The distributed nature of the validation and final check ensures that all blocks are evaluated concurrently, which is essential for solving the Sudoku puzzle in a timely manner.
+
+Watch the video on [YouTube](https://youtu.be/9Ijr1DpHRqg).
